@@ -51,17 +51,13 @@ python manage.py makemigrations
 python manage.py migrate
 ```
 
-2. Create a superuser (optional):
-```bash
-python manage.py createsuperuser
-```
 
 3. Start the development server:
 ```bash
 python manage.py runserver
 ```
 
-The API will be available at `http://localhost:8000/`
+The API will be available at `http://127.0.0.1:8000/`
 
 ## Functionalities Implemented
 * User registration and management
