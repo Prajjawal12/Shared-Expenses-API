@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Balance Sheet</title>
+  </head>
+  <body>
+    <h1>Balance Sheet</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>User</th>
+          <th>Total Expense</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for user_id, user_data in individual_expenses.items %}
+        <tr>
+          <td>{{ user_data.name }}</td>
+          <td>{{ user_data.total }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <h2>Total Expenses: {{ total_expenses }}</h2>
+    <a href="{% url 'download_balance_sheet' %}">Download Balance Sheet</a>
+  </body>
+</html>
