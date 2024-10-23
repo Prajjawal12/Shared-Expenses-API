@@ -1,8 +1,67 @@
 # Django Expense Tracker Project
 
-
 ## Project Overview
 This project is an expense tracker application built using Django. It allows users to create and manage their expenses, track contributions from multiple users, and generate balance sheets. The application supports various expense splitting methods, including equal sharing, exact amounts, and percentage splits.
+
+## Project Setup
+
+### Prerequisites
+* Python 3.10
+* Conda package manager
+* MySQL (or another supported database)
+
+### Environment Setup
+1. Clone the repository:
+```bash
+git clone https://github.com/Prajjawal12/Shared-Expenses-API.git
+cd Shared-Expenses-API
+```
+
+2. Create and activate a Conda environment:
+```bash
+conda create -n expense-tracker python=3.8
+conda activate expense-tracker
+```
+
+3. Install required packages:
+```bash
+pip install -r requirements.txt
+```
+
+### Database Configuration
+1. Create a new MySQL database for the project
+2. Update database settings in `settings.py`:
+```python
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'your_database_name',
+        'USER': 'your_database_user',
+        'PASSWORD': 'your_database_password',
+        'HOST': 'localhost',
+        'PORT': '3306',
+    }
+}
+```
+
+### Running the Project
+1. Apply migrations:
+```bash
+python manage.py makemigrations
+python manage.py migrate
+```
+
+2. Create a superuser (optional):
+```bash
+python manage.py createsuperuser
+```
+
+3. Start the development server:
+```bash
+python manage.py runserver
+```
+
+The API will be available at `http://localhost:8000/`
 
 ## Functionalities Implemented
 * User registration and management
@@ -34,29 +93,4 @@ This project is an expense tracker application built using Django. It allows use
 #### List Expenses
 * **Endpoint:** `GET /expenses/`
 * **Description:** This endpoint returns a list of all expenses recorded in the application.
-* **Response:** A list of expenses with details such as title, amount, users involved, and splitting method.
-
-#### Create Expense
-* **Endpoint:** `POST /expenses/create/`
-* **Description:** Allows the creation of a new expense. It expects details such as title, amount, users involved, and the splitting method.
-* **Response:** Confirmation response with details of the created expense.
-
-#### Get Expense Details
-* **Endpoint:** `GET /expenses/<int:pk>/`
-* **Description:** Retrieves details of a specific expense by its ID.
-* **Response:** Expense details including title, amount, users involved, and splitting method.
-
-### Balance Sheet Endpoints
-
-#### View Balance Sheet
-* **Endpoint:** `GET /balance_sheet/`
-* **Description:** This endpoint provides an overview of all expenses and their details.
-* **Response:** A list of expenses with relevant details.
-
-#### Download Balance Sheet
-* **Endpoint:** `GET /balance_sheet/download/`
-* **Description:** This endpoint allows users to download their balance sheet in CSV format.
-* **Response:** A CSV file containing the balance sheet data, including expense titles, amounts, and splitting details.
-
-## User Contributions
-Each user can view their contributions towards different expenses. The contributions are returned as part of the user details, showing how much they have contributed to various expenses along with the expense details.
+* **Response:** A list of expenses with details such as title, amount, users involved, and splitting meth
