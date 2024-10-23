@@ -1,6 +1,5 @@
 # Django Expense Tracker Project
-**Author:** Prajjawal Deep Yadav  
-**Date:** Today
+
 
 ## Project Overview
 This project is an expense tracker application built using Django. It allows users to create and manage their expenses, track contributions from multiple users, and generate balance sheets. The application supports various expense splitting methods, including equal sharing, exact amounts, and percentage splits.
