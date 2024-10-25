@@ -86,7 +86,6 @@ The API will be available at `http://127.0.0.1:8000/`
 ### Balance Sheet
 | Endpoint | Method | URL | Description |
 |----------|--------|-----|-------------|
-| View Balance Sheet | GET | `/balance_sheet/` | View complete balance sheet |
 | Download Balance Sheet | GET | `/balance_sheet/download/` | Download balance sheet as CSV |
 
 ### Detailed Endpoint Specifications
